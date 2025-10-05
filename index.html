@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spare Interface</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    
+    <!-- 配置Tailwind自定义颜色和字体 -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#3B82F6',
+                        secondary: '#10B981',
+                        accent: '#8B5CF6',
+                        dark: '#1E293B',
+                        light: '#F8FAFC'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/tailwindcss">
+        @layer utilities {
+            .btn-hover {
+                @apply transition-all duration-300 transform hover:scale-105 hover:shadow-lg active:scale-95;
+            }
+            .card-effect {
+                @apply bg-white dark:bg-dark rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-xl;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-gradient-to-br from-light to-gray-100 dark:from-gray-900 dark:to-dark min-h-screen font-sans text-gray-800 dark:text-gray-100">
+    <!-- 顶部导航 -->
+    <header class="container mx-auto px-4 py-6">
+        <div class="flex justify-between items-center">
+            <h1 class="text-[clamp(1.5rem,5vw,2.5rem)] font-bold text-primary">
+                <i class="fa fa-link mr-2"></i>Spare Interface
+            </h1>
+            <button id="theme-toggle" class="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <i class="fa fa-moon-o dark:hidden text-xl"></i>
+                <i class="fa fa-sun-o hidden dark:block text-xl"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- 主内容区 -->
+    <main class="container mx-auto px-4 pb-16">
+        <!-- 分类标题 -->
+        <div class="mb-8">
+            <h2 class="text-[clamp(1.2rem,3vw,1.8rem)] font-semibold mb-2">备用网站</h2>
+            <p class="text-gray-600 dark:text-gray-400">强大的更新迭代能力，不死稳定的域名防护，是您提高生产力的最佳选择</p>
+        </div>
+        
+        <!-- 按钮网格 -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6">
+            <!-- 按钮1 -->
+            <a href="http://dqcp7fhz.svipcdn.cn/www43136177" target="_blank" class="card-effect">
+                <div class="p-6 flex flex-col items-center justify-center btn-hover">
+                    <div class="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mb-4">
+                        <i class="fa fa-search text-2xl text-blue-600 dark:text-blue-300"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-1">接口1</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">点击进入</p>
+                </div>
+            </a>
+            
+            <!-- 按钮2 -->
+            <a href="http://xtvyrj2h.svipcdn.cn/www43136177/login" target="_blank" class="card-effect">
+                <div class="p-6 flex flex-col items-center justify-center btn-hover">
+                    <div class="w-14 h-14 rounded-full bg-pink-100 dark:bg-pink-900 flex items-center justify-center mb-4">
+                        <i class="fa fa-play-circle text-2xl text-pink-600 dark:text-pink-300"></i>
+                    </div>
+                    <h3 class="text-lg font-medium mb-1">接口2</h3>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">点击进入</p>
+                </div>
+            </a>
+            
+            <!-- 按钮3 -->
+            <!-- 修改后的官方TG频道卡片 -->
+<a href="https://t.me/gm555333" target="_blank" class="card-effect">
+    <div class="p-6 flex flex-col items-center justify-center btn-hover">
+        <div class="w-14 h-14 rounded-full bg-blue-100 dark:bg-blue-900 flex items-center justify-center mb-4">
+            <i class="fa fa-telegram text-2xl text-blue-600 dark:text-blue-300"></i>
+        </div>
+        <h3 class="text-lg font-medium mb-1">官方TG频道/需🪜</h3>
+        <p class="text-sm text-gray-500 dark:text-gray-400">点击进入</p>
+    </div>
+</a>
+            
+            
+
+    <!-- 页脚 -->
+    <footer class="bg-white/80 dark:bg-dark/80 backdrop-blur-md py-4 fixed bottom-0 left-0 right-0 border-t border-gray-200 dark:border-gray-800">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500 dark:text-gray-400">
+            <p>© 2025 快速访问 | 点击按钮跳转</p>
+        </div>
+    </footer>
+
+    <script>
+        // 深色模式切换
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // 检查用户偏好或本地存储的主题设置
+        if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
+        // 切换主题
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            
+            // 保存主题偏好
+            if (document.documentElement.classList.contains('dark')) {
+                localStorage.theme = 'dark';
+            } else {
+                localStorage.theme = 'light';
+            }
+        });
+        
+        // 添加页面加载动画
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.card-effect').forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 100 * index);
+            });
+        });
+    </script>
+</body>
+</html>
